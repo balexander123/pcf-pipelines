@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+echo "AZURE_PCF_TERRAFORM_TEMPLATE " ${AZURE_PCF_TERRAFORM_TEMPLATE}
 # Copy base template with no clobber if not using the base template
 if [[ ! ${AZURE_PCF_TERRAFORM_TEMPLATE} == "c0-azure-base" ]]; then
   cp -rn pcf-pipelines/install-pcf/azure/terraform/c0-azure-base/* pcf-pipelines/install-pcf/azure/terraform/${AZURE_PCF_TERRAFORM_TEMPLATE}/
