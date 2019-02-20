@@ -10,9 +10,9 @@ fi
 # Get ert subnet if multi-resgroup
 az login --service-principal -u ${AZURE_CLIENT_ID} -p ${AZURE_CLIENT_SECRET} --tenant ${AZURE_TENANT_ID}
 az account set --subscription ${AZURE_SUBSCRIPTION_ID}
-ERT_SUBNET_CMD="az network vnet subnet list -g network-core --vnet-name vnet-pcf --output json | jq '.[] | select(.name == \"ert\") | .id' | tr -d '\"'"
-ERT_SUBNET=$(eval ${ERT_SUBNET_CMD})
-echo "Found SubnetID=${ERT_SUBNET}"
+# ERT_SUBNET_CMD="az network vnet subnet list -g network-core --vnet-name vnet-pcf --output json | jq '.[] | select(.name == \"ert\") | .id' | tr -d '\"'"
+# ERT_SUBNET=$(eval ${ERT_SUBNET_CMD})
+# echo "Found SubnetID=${ERT_SUBNET}"
 
 echo "=============================================================================================="
 echo "Collecting Terraform Variables from Deployed Azure Objects ...."
@@ -89,3 +89,5 @@ echo "==========================================================================
 terraform apply \
   -state-out terraform-state-output/terraform.tfstate \
   terraform.tfplan
+
+terraform output
