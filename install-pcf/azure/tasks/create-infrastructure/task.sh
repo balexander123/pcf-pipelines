@@ -90,4 +90,4 @@ terraform apply \
   -state-out terraform-state-output/terraform.tfstate \
   terraform.tfplan
 
-terraform output
+terraform output -state=terraform-state-output/terraform.tfstate
