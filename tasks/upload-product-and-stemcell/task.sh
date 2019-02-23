@@ -84,7 +84,7 @@ fi
 FILE_PATH=`find ./pivnet-product -name *.pivotal | sort | head -1`
 echo FILE_PATH: $FILE_PATH
 pwd
-ls -l
+ls -l pivnet-product
 om-linux -t https://$OPSMAN_DOMAIN_OR_IP_ADDRESS \
   --client-id "${OPSMAN_CLIENT_ID}" \
   --client-secret "${OPSMAN_CLIENT_SECRET}" \
