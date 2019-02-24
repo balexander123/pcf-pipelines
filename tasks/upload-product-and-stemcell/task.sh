@@ -6,8 +6,6 @@ if [[ -n "$NO_PROXY" ]]; then
   echo "$OM_IP $OPSMAN_DOMAIN_OR_IP_ADDRESS" >> /etc/hosts
 fi
 
-cat ./pivnet-product/metadata.json
-
 STEMCELL_VERSION=$(
   cat ./pivnet-product/metadata.json |
   jq --raw-output \
