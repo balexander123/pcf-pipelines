@@ -6,6 +6,8 @@ if [[ -n "$NO_PROXY" ]]; then
   echo "$OM_IP $OPSMAN_DOMAIN_OR_IP_ADDRESS" >> /etc/hosts
 fi
 
+cat ./pivnet-product/metadata.json
+
 STEMCELL_VERSION=$(
   cat ./pivnet-product/metadata.json |
   jq --raw-output \
@@ -59,6 +61,7 @@ if [ -n "$STEMCELL_VERSION" ]; then
         ' < pivnet-product/metadata.json
     )
 
+    echo "$product_slug"
     pivnet-cli login --api-token="$PIVNET_API_TOKEN"
     pivnet-cli download-product-files -p "$product_slug" -r $STEMCELL_VERSION -g "*${IAAS}*" --accept-eula
 
