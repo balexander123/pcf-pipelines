@@ -55,9 +55,11 @@ resources:
 - name: pcf-pipelines
   type: git
   source:
-    uri: git@github.com:pivotal-cf/pcf-pipelines.git
-    branch: master
-    private_key: {{git_private_key}}
+    #uri: git@github.com:pivotal-cf/pcf-pipelines.git
+    uri: https://github.com/balexander123/pcf-pipelines.git
+    tag: v0.23.13
+    #branch: master
+    #private_key: {{git_private_key}}
 
 - name: pivnet-opsmgr
   type: pivnet
@@ -512,4 +514,3 @@ jobs:
       OPSMAN_PASSWORD: {{opsman_admin_password}}
       OPSMAN_CLIENT_ID: ""
       OPSMAN_CLIENT_SECRET: ""
-
