@@ -14,7 +14,6 @@ run:
   path: pcf-pipelines/tasks/configure-ert/task.sh
 
 params:
-  PRODUCT_NAME:
   pcf_iaas:
   PCF_ERT_DOMAIN:
   SYSTEM_DOMAIN:
