@@ -431,7 +431,7 @@ om-linux \
   --password "$OPS_MGR_PWD" \
   --skip-ssl-validation \
   configure-product \
-  --product-name srt \
+  --product-name "$PRODUCT_NAME" \
   --product-properties "$cf_properties" \
   --product-network "$cf_network" \
   --product-resources "$cf_resources"
