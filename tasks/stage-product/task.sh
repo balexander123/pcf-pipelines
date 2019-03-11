@@ -42,9 +42,10 @@ metadata_json=$(ruby -ryaml -rjson -e 'puts YAML.load_file(Dir["metadata/*.yml"]
 PRODUCT_NAME="$(echo "$metadata_json" | jq -r .name)"
 desired_version="$(echo "$metadata_json" | jq -r .product_version)"
 
-echo **************************************************************
+echo "**************************************************************"
+echo metadata_json $metadata_json
 echo PRODUCT_NAME $PRODUCT_NAME
-echo **************************************************************
+echo "**************************************************************"
 
 # Figure out which products are unstaged.
 UNSTAGED_ALL=$(jq -n --argjson available "$AVAILABLE" --argjson staged "$STAGED" \
